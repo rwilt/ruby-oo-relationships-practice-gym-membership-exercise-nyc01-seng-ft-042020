@@ -19,8 +19,16 @@ class Gym
 
   def membership_lifters
     gym_memberships.map do |gym|
-      gym.lifter
+      gym.lifter.name
     end
+  end
+
+  def lift_total
+    total = 0
+    gym_memberships.each do |gym|
+      total += gym.lifter.lift_total
+    end
+    total
   end
 
 end
