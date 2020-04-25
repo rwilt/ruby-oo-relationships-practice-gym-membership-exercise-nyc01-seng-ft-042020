@@ -16,6 +16,10 @@ class Lifter
   end
 end
 
+def new_membership(cost,gym)
+  Membership.new(cost,self,gym)
+end
+
 def gyms 
   memberships.map do |membership|
     membership.gym

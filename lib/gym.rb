@@ -11,6 +11,18 @@ class Gym
     @@all
   end
 
+  def gym_memberships
+  Membership.all.select do |member|
+    member.gym == self
+  end
+  end
+
+  def membership_lifters
+    gym_memberships.map do |gym|
+      gym.lifter
+    end
+  end
+
 end
 
 # gym must have a name.
